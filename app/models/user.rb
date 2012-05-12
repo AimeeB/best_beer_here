@@ -1,5 +1,5 @@
 class User
-	#rolify
+	
   include Mongoid::Document
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -50,6 +50,8 @@ class User
   field :invitation_limit, :type => Integer
   field :invited_by_id, :type => String
   field :invited_by_type, :type => String
+  
+  belongs_to :role
 end
 
 
