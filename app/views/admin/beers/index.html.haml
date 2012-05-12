@@ -1,0 +1,10 @@
+= link_to 'Add beer here', new_admin_beer_path
+
+%table
+  - @beers.each do |beer|
+    %tr{ :class => cycle(:odd, :even) }
+      %td.text= beer.name
+      %td.action= link_to t('show'), admin_beer_path(beer)
+      %td.action= link_to t('edit'), edit_admin_beer_path(beer)
+      %td.action
+        = button_to "Delete", { :action => "destroy", :id => beer.id }, :confirm => "Are you sure?", :controller => 'beer', :method => :delete

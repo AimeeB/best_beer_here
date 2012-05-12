@@ -1,0 +1,10 @@
+= link_to 'Add bar here', new_admin_bar_path
+
+%table
+  - @bars.each do |bar|
+    %tr{ :class => cycle(:odd, :even) }
+      %td.text= bar.name
+      %td.action= link_to t('show'), admin_bar_path(bar)
+      %td.action= link_to t('edit'), edit_admin_bar_path(bar)
+      %td.action
+        = button_to "Delete", { :action => "destroy", :id => bar.id }, :confirm => "Are you sure?", :controller => 'bar', :method => :delete

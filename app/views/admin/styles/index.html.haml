@@ -1,0 +1,10 @@
+= link_to 'Add style here', new_admin_style_path
+
+%table
+  - @styles.each do |style|
+    %tr{ :class => cycle(:odd, :even) }
+      %td.text= style.name
+      %td.action= link_to t('show'), admin_style_path(style)
+      %td.action= link_to t('edit'), edit_admin_style_path(style)
+      %td.action
+        = button_to "Delete", { :action => "destroy", :id => style.id }, :confirm => "Are you sure?", :controller => 'style', :method => :delete

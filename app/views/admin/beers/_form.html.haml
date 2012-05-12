@@ -1,0 +1,16 @@
+= semantic_form_for @beer, :url => @beer.new_record? ? admin_beers_path : admin_beer_path(@beer) do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :brewery
+    = f.input :style
+    = f.input :bars
+    = f.input :ingredients
+    = f.input :abv
+    = f.input :description
+    = f.input :ba_url
+    = f.input :rb_url
+    = f.input :beer_url
+    = f.input :image_url
+  = f.buttons do
+    = f.button :submit
+  

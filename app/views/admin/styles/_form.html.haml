@@ -1,0 +1,9 @@
+= semantic_form_for @style, :url => @style.new_record? ? admin_styles_path : admin_style_path(@style) do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :description
+    = f.input :origin
+    = f.input :resource_url
+    = f.input :ingredients
+  = f.buttons do
+    = f.button :submit

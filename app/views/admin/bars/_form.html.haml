@@ -1,0 +1,8 @@
+= semantic_form_for @bar, :url => @bar.new_record? ? admin_bars_path : admin_bar_path(@bar) do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :address
+    = f.input :url
+    = f.input :image_url
+  = f.buttons do
+    = f.button :submit

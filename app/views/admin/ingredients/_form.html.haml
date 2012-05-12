@@ -1,0 +1,8 @@
+= semantic_form_for @ingredient, :url => @ingredient.new_record? ? admin_ingredients_path : admin_ingredient_path(@ingredient) do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :ing_type
+    = f.input :description
+    = f.input :resource_url
+  = f.buttons do
+    = f.button :submit

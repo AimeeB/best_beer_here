@@ -1,0 +1,10 @@
+= link_to 'Add ingredient here', new_admin_ingredient_path
+
+%table
+  - @ingredients.each do |ingredient|
+    %tr{ :class => cycle(:odd, :even) }
+      %td.text= ingredient.name
+      %td.action= link_to t('show'), admin_ingredient_path(ingredient)
+      %td.action= link_to t('edit'), edit_admin_ingredient_path(ingredient)
+      %td.action
+        = button_to "Delete", { :action => "destroy", :id => ingredient.id }, :confirm => "Are you sure?", :controller => 'ingredient', :method => :delete

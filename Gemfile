@@ -60,6 +60,8 @@ gem "therubyracer", :group => :assets, :platform => :ruby
 
 # added gems
 gem "heroku", "~> 2.25.0"
+gem 'formtastic'
+
 group :production do
   gem 'thin'
 end
