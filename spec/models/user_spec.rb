@@ -1,5 +1,8 @@
 require 'spec_helper'
 
-describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe 'User' do
+  it "should require an email" do
+    user = User.new
+    user.should_not be_valid
+  end
 end

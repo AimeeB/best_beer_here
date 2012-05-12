@@ -4,7 +4,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "aimee@bestbeerhere.com"
+  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -82,27 +82,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "e798afd3fbb633764d50f3d17895ad9e6289235363d6eff69de1f16c849b98c57d9032d0a1fb144defad3156600df55c13388845be644970ca0d37d92c5a2c34"
-
-  # ==> Configuration for :invitable
-  # The period the generated invitation token is valid, after
-  # this period, the invited resource won't be able to accept the invitation.
-  # When invite_for is 0 (the default), the invitation won't expire.
-  # config.invite_for = 2.weeks
-  
-  # Number of invitations users can send.
-  # If invitation_limit is nil, users can send unlimited invitations.
-  # If invitation_limit is 0, users can't send invitations.
-  # If invitation_limit n > 0, users can send n invitations.
-  # Default: nil
-  # config.invitation_limit = 5
-  
-  # The key to be used to check existing users when sending an invitation
-  # config.invite_key = :email
-  
-  # Flag that force a record to be valid before being actually invited 
-  # Default: false
-  # config.validate_on_invite = true
+  # config.pepper = "101ebfda627c94d2d22186211aa8c24789d330ca9ecdad1e5a063af9be0c9127c929d4bfaed0be4694ca461aab62aaf74127e331b5cf30221d85ba2e5dba593f"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -218,7 +198,7 @@ Devise.setup do |config|
   # config.navigational_formats = ["*/*", :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = Rails.env.test? ? :get : :delete
+  config.sign_out_via = :delete
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

@@ -2,6 +2,17 @@ BestBeerHere::Application.routes.draw do
   devise_for :users
   
   root :to => "home#index"
+  
+  scope "admin", :as => 'admin' do
+    root :to => 'admin#index'
+    
+    resources :beers,  :controller => 'admin/beers'
+    resources :breweries,  :controller => 'admin/breweries'
+    resources :styles,  :controller => 'admin/styles'
+    resources :ingredients,  :controller => 'admin/ingredients'
+    resources :bars,  :controller => 'admin/bars'
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
