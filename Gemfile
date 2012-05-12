@@ -5,8 +5,6 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -57,3 +55,9 @@ gem "bootstrap-sass", ">= 2.0.1"
 gem "simple_form"
 gem "will_paginate_mongoid"
 gem "therubyracer", :group => :assets, :platform => :ruby
+
+# added gems
+gem "heroku", "~> 2.25.0"
+group :production do
+  gem 'thin'
+end
