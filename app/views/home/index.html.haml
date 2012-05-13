@@ -2,4 +2,6 @@
 - @users.each do |user|
   %p 
     User: 
-    = "#{user.name}, #{user.role.name}"
+    = "#{user.name}"
+    - if user.role
+      = ", #{user.role.name}"
