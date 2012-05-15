@@ -7,14 +7,6 @@ class Admin::IngredientsController < AdminController
     @ingredient = Ingredient.new
   end
   
-  def show
-    @ingredient = Ingredient.find(params[:id])
-  end
-  
-  def edit
-    @ingredient = Ingredient.find(params[:id])
-  end
-
   def create
     @ingredient = Ingredient.new(params[:ingredient])
     if @ingredient.save      
@@ -23,9 +15,26 @@ class Admin::IngredientsController < AdminController
     end
     render :action => 'new'
   end
-
+  
+  def show
+    @ingredient = Ingredient.find_by_slug(params[:id])
+  end
+  
+  def edit
+    @ingredient = Ingredient.find_by_slug(params[:id])
+  end
+  
+  def update
+    @ingredient = Ingridient.find_by_slug(params[:id])
+    if @ingredient.save      
+      flash[:notice] = 'Ingredient was successfully updated!'  
+      return redirect_to admin_ingredients_path
+    end
+    render :action => 'new'
+  end
+  
   def destroy
-    @ingredient = Ingredient.find(params[:id])
+    @ingredient = Ingredient.find_by_slug(params[:id])
     flash[:notice] = 'Ingredient was successfully destroyed.' if @ingredient.destroy
     redirect_to(admin_ingredients_path)
   end

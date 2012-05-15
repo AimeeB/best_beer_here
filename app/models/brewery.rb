@@ -1,7 +1,10 @@
 class Brewery
   include Mongoid::Document
+  include Mongoid::Timestamps
+  include Mongoid::Slug
   
   field :name, :type => String
+  slug :name
   field :address1, :type => String
   field :city, :type => String
   field :state, :type => String

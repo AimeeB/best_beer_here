@@ -1,2 +1,6 @@
-@beers.each do |beer|
-  = link_to beer.name, admin_beer_path(beer)
+%h1= @brewery.name
+%h2 Beers
+%ul
+  - @beers.each do |beer|
+    %li
+      = link_to beer.name, admin_beer_path(beer)

@@ -32,7 +32,7 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body, button, input, select, textarea { font-family: 'Helvetica Neue Light', 'HelveticaNeue-Light', 'Helvetica', 'Arial', sans-serif; color: #222; }
 
 /* 
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -96,7 +96,7 @@ sub { bottom: -0.25em; }
    Lists
    ========================================================================== */
 
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; list-style-type: none; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -211,9 +211,11 @@ td { vertical-align: top; }
 
 /* ==|== BODY STYLES ===================================================== */
 
-body { background-color:#333; color: white; }
+body { background-color:#333; color: white; line-height: 1.4em; }
 
-h1, h2, h3 { font-family: HumanePetreiusTitl1543; color: #e6b521; }
+h1, h2, h3 { font-family: HumanePetreiusTitl1543; color: #e6b521; font-weight:normal; }
+
+h1 { font-size: 2.5em; }
 
 .container { width:80%; margin: 20px auto; }
 
@@ -256,6 +258,17 @@ header {
 h1#headline {
   font-size:5.5em;
   padding-top: 80px;
+}
+
+
+/* ==|== BEER SHOW PAGE ===================================================== */
+
+article.beer {
+  img {
+    max-height:250px;
+    max-width:250px;
+    padding: 0px 20px 20px 0px;
+  }
 }
 
 

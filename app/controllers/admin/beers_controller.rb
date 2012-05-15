@@ -17,16 +17,19 @@ class Admin::BeersController < AdminController
   end
   
   def show
-    @beer = Beer.find(params[:id])
+    @beer = Beer.find_by_slug(params[:id])
+    @bars = @beer.bars
+    @brewery = @beer.brewery
+    @style = @beer.style
   end
   
   def edit
-    @beer = Beer.find(params[:id])
+    @beer = Beer.find_by_slug(params[:id])
   end  
   
   def update
-    @beer = Beer.find(params[:id])
-    if @beer.save      
+    @beer = Beer.find_by_slug(params[:id])
+    if @beer.update_attributes(params[:beer])      
       flash[:notice] = 'Beer was successfully updated!'  
       return redirect_to admin_beers_path
     end
@@ -34,7 +37,7 @@ class Admin::BeersController < AdminController
   end
   
   def destroy
-    @beer = Beer.find(params[:id])
+    @beer = Beer.find_by_slug(params[:id])
     flash[:notice] = 'Beer was successfully destroyed.' if @beer.destroy
     redirect_to(admin_beers_path)
   end

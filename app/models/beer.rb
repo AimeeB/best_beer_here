@@ -1,8 +1,10 @@
 class Beer
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Slug
   
   field :name, :type => String
+  slug :name
   field :abv, :type => Float
   field :description, :type => String
   field :image_url

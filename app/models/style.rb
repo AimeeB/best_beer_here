@@ -1,7 +1,10 @@
 class Style
   include Mongoid::Document
+  include Mongoid::Timestamps
+  include Mongoid::Slug
   
-  field :name
+  field :name, :type => String
+  slug :name
   field :description
   field :origin
   field :resource_url

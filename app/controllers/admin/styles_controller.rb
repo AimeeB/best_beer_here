@@ -17,11 +17,11 @@ class Admin::StylesController < AdminController
   end
   
   def edit
-    @style = Style.find(params[:id])
+    @style = Style.find_by_slug(params[:id])
   end
   
   def update
-    @style = Style.find(params[:id])
+    @style = Style.find_by_slug(params[:id])
     if @style.save      
       flash[:notice] = 'Style was successfully updated!'  
       return redirect_to admin_styles_path
@@ -30,11 +30,11 @@ class Admin::StylesController < AdminController
   end
   
   def show
-    @style = Style.find(params[:id])
+    @style = Style.find_by_slug(params[:id])
   end
 
   def destroy
-    @style = Style.find(params[:id])
+    @style = Style.find_by_slug(params[:id])
     flash[:notice] = 'Style was successfully destroyed.' if @style.destroy
     redirect_to(admin_styles_path)
   end
