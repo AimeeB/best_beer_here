@@ -1,2 +1,19 @@
-- @beers.each do |beer|
-  = link_to beer.name, admin_beer_path(beer)
+%article.bar.show-page
+
+  %h1= @bar.name
+  - if @bar.image_url
+    = image_tag(@bar.image_url, :class => 'float-left' )
+
+  - if @beers != []
+    %h3 What's on tap
+    - @beers.each do |beer|
+      = link_to beer.name, admin_beer_path(beer)
+  
+  %ul.links
+    - if @bar.url
+      %li
+        = link_to @bar.name + ' Website', @bar.url
+
+    - if @bar.yelp_url
+      %li
+        = link_to @bar.name + ' on Yelp', @bar.yelp_url

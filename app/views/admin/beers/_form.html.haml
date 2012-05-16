@@ -4,7 +4,7 @@
     = f.input :brewery, :collection => Brewery.all
     = f.input :style, :collection => Style.all
     = f.input :bars, :collection => Bar.all
-    = f.input :ingredients, :collection => Ingredient.all
+    = f.input :ingredients, :as => :check_boxes, :collection => Ingredient.all
     = f.input :abv
     = f.input :description
     = f.input :ba_url

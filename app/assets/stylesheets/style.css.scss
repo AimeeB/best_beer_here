@@ -50,7 +50,7 @@ body, button, input, select, textarea { font-family: 'Helvetica Neue Light', 'He
 
 a { color: #e6b521; text-decoration:none; }
 a:visited { color: #e6b521; }
-a:hover { color: #ddd; }
+a:hover { color: #99760B; }
 a:focus { outline: white; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
@@ -211,13 +211,13 @@ td { vertical-align: top; }
 
 /* ==|== BODY STYLES ===================================================== */
 
-body { background-color:#333; color: white; line-height: 1.4em; }
+body { background-color:#333; color: #dedede; line-height: 1.4em; }
 
 h1, h2, h3 { font-family: HumanePetreiusTitl1543; color: #e6b521; font-weight:normal; }
 
 h1 { font-size: 2.5em; }
 
-.container { width:80%; margin: 20px auto; }
+.container { width:80%; margin: 20px auto; position:relative; height:100%;}
 
 ol { list-style-type:none; }
 
@@ -255,20 +255,41 @@ header {
 
 /* ==|== HOME PAGE ===================================================== */
 
-h1#headline {
-  font-size:5.5em;
-  padding-top: 80px;
+#home-wrapper {
+  h1#headline {
+    font-family: HumanePetreiusItalic1543;
+    font-size:7.5em;
+    padding: 80px 0px 200px 0px;
+    line-height:1em;
+  }
+  h3 {
+    position:absolute;
+    right:0px;
+    bottom:40px;
+    font-size:2.2em;
+    font-family: HumanePetreiusItalic1543;
+    &:nth-child(2) {
+      bottom:0px;
+    }
+  }
+  
+}
+
+/* ==|== SHOW PAGES ===================================================== */
+
+article.show-page {
+  img {
+    max-height:250px;
+    max-width:250px;
+    padding: 0px 20px 20px 0px;
+  }
 }
 
 
 /* ==|== BEER SHOW PAGE ===================================================== */
 
 article.beer {
-  img {
-    max-height:250px;
-    max-width:250px;
-    padding: 0px 20px 20px 0px;
-  }
+
 }
 
 
@@ -283,9 +304,28 @@ table {
   }
 }
 
+#admin-nav {
+  margin:50px 70px 0px 0px;
+  ul {
+    li {
+      margin-bottom:5px;
+      a {
+      }
+    }
+  }
+}
 
+/* ==|== FORMTASTIC FORM STYLES ===================================================== */
 
-
+.formtastic {
+  .buttons {
+    float:right;
+    button { padding:5px;}
+  }
+  legend {
+    color: #dedede;
+  }
+}
 
 
 /* ==|== non-semantic helper classes ========================================

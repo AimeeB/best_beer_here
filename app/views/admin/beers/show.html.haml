@@ -1,7 +1,9 @@
-%article.beer
+%article.beer.show-page
   %h1= @beer.name
   - if @beer.image_url
     = image_tag(@beer.image_url, :class => 'float-left' )
+    
+  = link_to 'EDIT THIS BEER', edit_admin_beer_path(@beer) 
 
   - if @beer.description != ""
     %p
@@ -11,7 +13,9 @@
     Style: 
     = link_to @style.name, admin_style_path(@style)
   %p= "ABV: #{@beer.abv}"
-
+  
+  - @beer.ingredients.each do |ingredient|
+    = link_to ingredient.name, admin_ingredient_path(@ingredient)
 
   %ul.links
     - if @beer.ba_url

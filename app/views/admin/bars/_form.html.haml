@@ -4,5 +4,7 @@
     = f.input :address
     = f.input :url
     = f.input :image_url
+    = f.input :yelp_url
+    = f.input :beers, :as => :select, :collection => Beer.all
   = f.buttons do
     = f.button :submit
