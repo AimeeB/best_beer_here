@@ -1,0 +1,16 @@
+%article.style.show-page
+  
+  %h3= @style.name
+  %h4= "Origin: #{@style.origin}"
+ 
+  %p.wide-body.float-left
+    = @style.description
+    %br
+    %br
+    = link_to 'Source >>', @style.resource_url
+    
+  %h3= "#{@style.name} Beers"
+  %ul
+    - @style.beers.each do |b|
+      %li
+        = link_to b.name, admin_beer_path(b)

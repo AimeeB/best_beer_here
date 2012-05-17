@@ -96,7 +96,7 @@ sub { bottom: -0.25em; }
    Lists
    ========================================================================== */
 
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; list-style-type: none; }
+ul, ol { margin: 1em 0; padding: 0 0 0 0px; list-style-type: none; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -215,6 +215,8 @@ body { background-color:#333; color: #dedede; line-height: 1.4em; }
 
 h1, h2, h3 { font-family: HumanePetreiusTitl1543; color: #e6b521; font-weight:normal; }
 
+h4 { font-weight:normal;}
+
 h1 { font-size: 2.5em; }
 
 .container { width:80%; margin: 20px auto; position:relative; height:100%;}
@@ -229,7 +231,9 @@ ol { list-style-type:none; }
 .float-right {
   float:right
 }
-
+.wide-body {
+  width:80%;
+}
 
 /* ==|== HEADER & NAV STYLING ===================================================== */
 
@@ -279,8 +283,8 @@ header {
 
 article.show-page {
   img {
-    max-height:250px;
-    max-width:250px;
+    max-height:200px;
+    max-width:200px;
     padding: 0px 20px 20px 0px;
   }
 }
@@ -306,6 +310,7 @@ table {
 
 #admin-nav {
   margin:50px 70px 0px 0px;
+  height:1000px;
   ul {
     li {
       margin-bottom:5px;

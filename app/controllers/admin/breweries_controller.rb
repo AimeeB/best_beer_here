@@ -1,4 +1,5 @@
 class Admin::BreweriesController < AdminController
+    
   def index
     @breweries = Brewery.all
   end

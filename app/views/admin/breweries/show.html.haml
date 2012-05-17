@@ -1,6 +1,15 @@
-%h1= @brewery.name
-%h2 Beers
-%ul
-  - @beers.each do |beer|
-    %li
-      = link_to beer.name, admin_beer_path(beer)
+%article.brewery.show-page
+  %h1= @brewery.name
+  - if @brewery.image_url
+    = image_tag(@brewery.image_url, :class => 'float-left' )
+        
+  %h2 Beers
+  %ul
+    - @beers.each do |beer|
+      %li
+        = link_to beer.name, admin_beer_path(beer)
+                
+  - if @brewery.address1 && @brewery.city && @brewery.state
+    .map
+      = map_generator(@brewery)
+        
