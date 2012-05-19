@@ -13,8 +13,8 @@ class Beer
   field :beer_url, :type => String
   
   belongs_to :brewery, index: true
-  has_and_belongs_to_many :bars, index: true
-  belongs_to :style, index: true
-  has_and_belongs_to_many :ingredients, index: true
+  has_and_belongs_to_many :bars
+  belongs_to :style
+  has_and_belongs_to_many :ingredients
   
 end

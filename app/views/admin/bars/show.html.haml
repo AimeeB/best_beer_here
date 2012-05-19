@@ -1,9 +1,11 @@
 %article.bar.show-page
-
+  
   %h1= @bar.name
   - if @bar.image_url
     = image_tag(@bar.image_url, :class => 'float-left' )
-
+  
+  = link_to 'EDIT THIS BAR', edit_admin_bar_path(@bar)
+  
   - if @beers != []
     %h3 What's on tap
     - @beers.each do |beer|

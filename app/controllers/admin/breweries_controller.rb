@@ -28,7 +28,7 @@ class Admin::BreweriesController < AdminController
 
   def update
     @brewery = Brewery.find_by_slug(params[:id])
-    if @brewery.save      
+    if @brewery.update_attributes(params[:brewery])    
       flash[:notice] = 'Beer was successfully updated!'  
       return redirect_to admin_brewerys_path
     end

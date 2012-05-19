@@ -4,6 +4,6 @@
     = f.input :description
     = f.input :origin
     = f.input :resource_url
-    = f.input :ingredients
+    = f.input :ingredients, :as => :check_boxes, :collection => Ingredient.all
   = f.buttons do
     = f.button :submit

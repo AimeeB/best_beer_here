@@ -1,6 +1,9 @@
 %article.style.show-page
   
   %h3= @style.name
+
+  = link_to 'EDIT THIS STYLE', edit_admin_style_path(@style)
+
   %h4= "Origin: #{@style.origin}"
  
   %p.wide-body.float-left

@@ -27,7 +27,7 @@ class Admin::BarsController < AdminController
   
   def update
     @bar = Bar.find_by_slug(params[:id])
-    if @bar.save      
+    if @bar.update_attributes(params[:bar])       
       flash[:notice] = 'Bar was successfully updated!'  
       return redirect_to admin_bars_path
     end

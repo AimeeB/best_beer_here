@@ -26,7 +26,7 @@ class Admin::IngredientsController < AdminController
   
   def update
     @ingredient = Ingredient.find_by_slug(params[:id])
-    if @ingredient.save      
+    if @ingredient.update_attributes(params[:ingredient])      
       flash[:notice] = 'Ingredient was successfully updated!'  
       return redirect_to admin_ingredients_path
     end

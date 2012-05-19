@@ -5,3 +5,6 @@
     = link_to 'Explore beer...', root_path
   .clearfix
   %h3= link_to 'And who am I?', 'root_path'
+  
+- content_for :sidebar do
+  = render :partial => 'layouts/twitter'

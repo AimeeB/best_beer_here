@@ -19,7 +19,6 @@ class Admin::BeersController < AdminController
   def show
     @beer = Beer.find_by_slug(params[:id])
     @bars = @beer.bars
-    @brewery = @beer.brewery
     @style = @beer.style
   end
   

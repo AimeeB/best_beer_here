@@ -22,7 +22,7 @@ class Admin::StylesController < AdminController
   
   def update
     @style = Style.find_by_slug(params[:id])
-    if @style.save      
+    if @style.update_attributes(params[:style])      
       flash[:notice] = 'Style was successfully updated!'  
       return redirect_to admin_styles_path
     end

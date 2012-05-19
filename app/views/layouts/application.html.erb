@@ -21,6 +21,11 @@
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
+        <% if content_for?(:sidebar) %>
+          <aside id="#page-sidebar">
+            <%= yield :sidebar %>
+          </aside>
+        <% end %>
       </div>
       <footer>
       </footer>

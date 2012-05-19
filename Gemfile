@@ -63,6 +63,8 @@ gem "heroku", "~> 2.25.0"
 gem 'formtastic'
 gem 'mongoid_search'
 gem 'mongoid_slug'
+gem 'twitter'
+gem 'twitter-text'
 
 group :production do
   gem 'thin'

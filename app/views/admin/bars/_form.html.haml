@@ -5,6 +5,6 @@
     = f.input :url
     = f.input :image_url
     = f.input :yelp_url
-    = f.input :beers, :as => :select, :collection => Beer.all
+    = f.input :beers, :as => :check_boxes, :collection => Beer.all
   = f.buttons do
     = f.button :submit
