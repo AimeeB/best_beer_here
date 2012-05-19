@@ -19,10 +19,10 @@ module BestBeerHere
   class Application < Rails::Application
 
     Twitter.configure do |config|
-      config.consumer_key = 0iEG5UeJ5wZqSQyQWNSQ
-      config.consumer_secret = 2Shy0IyYBseKf9GqwVjiEWqRS8K787eOWSdFjQNusg
-      config.oauth_token = 345493899-Nd5AReyzshhhh22ysbxsYOKpXeVAMnnYNs0qywis
-      config.oauth_token_secret = whQmrkn2M9nPqj8O457ednflATyIqb0dMiRbKTM
+      config.consumer_key = "0iEG5UeJ5wZqSQyQWNSQ"
+      config.consumer_secret = "2Shy0IyYBseKf9GqwVjiEWqRS8K787eOWSdFjQNusg"
+      config.oauth_token = "345493899-Nd5AReyzshhhh22ysbxsYOKpXeVAMnnYNs0qywis"
+      config.oauth_token_secret = "whQmrkn2M9nPqj8O457ednflATyIqb0dMiRbKTM"
     end
 
     # don't generate RSpec tests for views and helpers
