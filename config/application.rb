@@ -23,6 +23,7 @@ module BestBeerHere
       config.consumer_secret = "2Shy0IyYBseKf9GqwVjiEWqRS8K787eOWSdFjQNusg"
       config.oauth_token = "345493899-Nd5AReyzshhhh22ysbxsYOKpXeVAMnnYNs0qywis"
       config.oauth_token_secret = "whQmrkn2M9nPqj8O457ednflATyIqb0dMiRbKTM"
+      callback_url = "http://localhost:3000/"   
     end
 
     # don't generate RSpec tests for views and helpers

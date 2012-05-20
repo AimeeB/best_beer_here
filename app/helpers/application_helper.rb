@@ -7,8 +7,8 @@ module ApplicationHelper
   end
   
   def tweets
-    auto_link(Twitter.user.("_aimeeb").name)
-    auto_link(Twitter.user_timeline("_aimeeb").first.text).html_safe
+    auto_link("@" + Twitter.user("BeerAdvocate").screen_name).html_safe
+    #auto_link(Twitter.user_timeline("_aimeeb").first.text).html_safe
   end
   
 end

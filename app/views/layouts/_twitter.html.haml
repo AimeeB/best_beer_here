@@ -1,1 +1,9 @@
-= tweets
+- @tweets = BeerTweet.get_tweets
+- @tweets.each do |tweet|
+  %ul.tweet
+    %li.tweet-user
+      = tweet[:user]
+    %li.tweet-content
+      = tweet[:tweet_content]
+    %li.tweet_time
+      = tweet[:tweet_time]
