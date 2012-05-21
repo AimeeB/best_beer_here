@@ -7,31 +7,14 @@
     %li
       = link_to 'Home', root_path
     %li
-      = link_to 'Beers', root_path
+      = link_to 'Beers', beers_path
     %li
-      = link_to 'Breweries', root_path
+      = link_to 'Breweries', breweries_path
     %li
-      = link_to 'Bars', root_path
+      = link_to 'Bars', bars_path
     %li
       = link_to 'Neighborhoods', root_path
     %li
-      = link_to 'Beer-o-pedia', root_path
+      = link_to 'Beer-o-pedia', pages_beerpedia_path
 
-.clearfix
-
-- if @admin
-  %br
-  %br
-  %nav#admin-nav.float-left
-    %p(style = 'line-height:0px;') ADMIN MENU
-    %ul
-      %li
-        = link_to 'Beers', admin_beers_path
-      %li
-        = link_to 'Breweries', admin_breweries_path
-      %li
-        = link_to 'Bars', admin_bars_path
-      %li
-        = link_to 'Styles', admin_styles_path
-      %li
-        = link_to 'Ingredients', admin_ingredients_path       
+.clearfix       

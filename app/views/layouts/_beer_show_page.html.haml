@@ -1,0 +1,55 @@
+%article.beer.show-page
+  %h1= @beer.name
+  - if @beer.image_url
+    = image_tag(@beer.image_url, :class => 'float-left' )
+    
+  - if @beer.description != ""
+    %p
+      Description: 
+      = @beer.description
+  - if @beer.style
+    %p
+      Style:
+      - if @admin 
+        = link_to @style.name, admin_style_path(@style)
+      - else
+        = link_to @style.name, style_path(@style)
+        
+    %p= "ABV: #{@beer.abv}"
+  
+  - @beer.ingredients.each do |ingredient|
+    - if @admin
+      = link_to ingredient.name, admin_ingredient_path(@ingredient)
+    - else
+      = link_to ingredient.name, ingredient_path(@ingredient)
+
+  %ul.links
+    - if @beer.ba_url
+      %li
+        = link_to 'BeerAdvocate', @beer.ba_url
+
+    - if @beer.rb_url
+      %li
+        = link_to 'Rate Beer', @beer.rb_url
+
+    - if @beer.beer_url
+      %li
+        = link_to 'More about', @beer.beer_url
+  
+  .clearfix
+  - if @bars != [] 
+    %h3
+      Bars: 
+      - @bars.each do |bar|
+        - if @admin
+          = link_to bar.name, admin_bar_url(bar)
+        - else
+          = link_to bar.name, bar_url(bar)
+  
+  - if @brewery      
+    %h3
+      Brewery: 
+      - if @admin
+        = link_to @brewery.name, admin_brewery_path(@brewery)
+      - else
+        = link_to @brewery.name, brewery_path(@brewery)

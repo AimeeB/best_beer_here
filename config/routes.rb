@@ -3,6 +3,14 @@ BestBeerHere::Application.routes.draw do
   
   root :to => "home#index"
   
+  get 'pages/beerpedia', :controller => 'pages'
+  
+  resources :beers, :controller => 'beers', :only => [:index, :show]
+  resources :bars, :controller => 'bars', :only => [:index, :show]
+  resources :breweries, :controller => 'breweries', :only => [:index, :show]
+  resources :styles, :controller => 'styles', :only => [:index, :show]
+  resources :ingredients, :controller => 'ingredients', :only => [:index, :show]
+  
   scope "admin", :as => 'admin' do
     root :to => 'admin#index'
     

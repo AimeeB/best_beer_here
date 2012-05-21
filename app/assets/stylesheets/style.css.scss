@@ -213,7 +213,7 @@ td { vertical-align: top; }
 
 body { background-color:#333; color: #dedede; line-height: 1.4em; }
 
-h1, h2, h3 { font-family: HumanePetreiusTitl1543; color: #e6b521; font-weight:normal; }
+h1, h2, h3 { font-family: HumanePetreiusTitl1543; color: #e6b521; font-weight:normal; line-height:1.5x  em;}
 
 h4 { font-weight:normal;}
 
@@ -234,7 +234,13 @@ ol { list-style-type:none; }
 .wide-body {
   width:80%;
 }
-
+.col_2 {
+  width:45%;
+  float:left;
+  &:first-child {
+    margin-right:10%;
+  }
+}
 /* ==|== HEADER & NAV STYLING ===================================================== */
 
 header {
@@ -309,7 +315,7 @@ table {
 }
 
 #admin-nav {
-  margin:50px 70px 0px 0px;
+  margin:0px 70px 0px 0px;
   height:1000px;
   ul {
     li {
@@ -332,6 +338,11 @@ table {
   }
 }
 
+/* TWITTER */
+
+#twitter-feed {
+  color: #806513;
+}
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.

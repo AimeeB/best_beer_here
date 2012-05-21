@@ -20,6 +20,7 @@ class Admin::BeersController < AdminController
     @beer = Beer.find_by_slug(params[:id])
     @bars = @beer.bars
     @style = @beer.style
+    @brewery = @beer.brewery
   end
   
   def edit

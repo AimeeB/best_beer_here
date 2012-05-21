@@ -17,15 +17,17 @@
         <%= render 'layouts/header' %>
         <!-- render 'layouts/messages' -->
       </header>
+      <aside class='sidebar' id="left-sidebar">
+        <% if @admin %>
+          <%= render :partial => 'admin/admin_nav' %>
+        <% else %>
+          <%= render :partial => 'layouts/twitter' %>
+        <% end %>
+      </aside>
       <div id="main" role="main">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
-        <% if content_for?(:sidebar) %>
-          <aside id="#page-sidebar">
-            <%= yield :sidebar %>
-          </aside>
-        <% end %>
       </div>
       <footer>
       </footer>
