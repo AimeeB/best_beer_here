@@ -1,0 +1,12 @@
+%article.ingredient.show-page
+
+  - if @ingredient.ing_type == 'Hops'
+    = image_tag('hops-yellow.png', :class => 'float-left')
+  
+  %h3.float-left= @ingredient.name  
+   
+  %p.wide-body.float-left
+    = @ingredient.description
+    %br
+    %br
+    = link_to 'Source >>', @ingredient.resource_url
