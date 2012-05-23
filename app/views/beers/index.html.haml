@@ -1,2 +1,5 @@
-- @beers.each do |beer|
-  = link_to beer.name, beer_path(beer)
+%section.content.float-left
+
+  %h1 Beers
+  - @beers.each do |beer|
+    = link_to beer.name, beer_path(beer)

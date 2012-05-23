@@ -22,13 +22,16 @@
       <aside class='sidebar' id="left-sidebar">
         <% if @admin %>
           <%= render :partial => 'admin/admin_nav' %>
-        <% elsif not @home %>
-          <%= render :partial => 'layouts/twitter' %>
         <% end %>
       </aside>
       <div id="main" role="main">
         <%= yield %>
       </div>
+      <aside class="sidebar float-right" id="right-sidbar">
+        <% if (not @home) && (not @admin) %>
+          <%= render :partial => 'layouts/twitter' %>
+        <% end %>
+      </aside>  
       <footer>
       </footer>
     </div> <!--! end of #container -->
