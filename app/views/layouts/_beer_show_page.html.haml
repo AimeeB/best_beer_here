@@ -46,7 +46,7 @@
         - else
           = link_to bar.name, bar_url(bar)
   
-  - if @brewery      
+  - if @brewery != []    
     %h3
       Brewery: 
       - if @admin

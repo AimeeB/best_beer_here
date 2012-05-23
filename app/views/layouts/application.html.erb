@@ -17,16 +17,16 @@
         <%= render 'layouts/header' %>
         <!-- render 'layouts/messages' -->
       </header>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>      
       <aside class='sidebar' id="left-sidebar">
         <% if @admin %>
           <%= render :partial => 'admin/admin_nav' %>
-        <% else %>
+        <% elsif not @home %>
           <%= render :partial => 'layouts/twitter' %>
         <% end %>
       </aside>
       <div id="main" role="main">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
         <%= yield %>
       </div>
       <footer>

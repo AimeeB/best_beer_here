@@ -1,21 +1,3 @@
-%article.bar.show-page
-  
-  %h1= @bar.name
-  - if @bar.image_url
-    = image_tag(@bar.image_url, :class => 'float-left' )
-  
-  = link_to 'EDIT THIS BAR', edit_admin_bar_path(@bar)
-  
-  - if @beers != []
-    %h3 What's on tap
-    - @beers.each do |beer|
-      = link_to beer.name, admin_beer_path(beer)
-  
-  %ul.links
-    - if @bar.url
-      %li
-        = link_to @bar.name + ' Website', @bar.url
+= link_to 'EDIT THIS BAR', edit_admin_bar_path(@bar)
 
-    - if @bar.yelp_url
-      %li
-        = link_to @bar.name + ' on Yelp', @bar.yelp_url
+= render :partial => 'layouts/bar_show_page'

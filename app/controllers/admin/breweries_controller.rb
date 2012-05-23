@@ -30,7 +30,7 @@ class Admin::BreweriesController < AdminController
     @brewery = Brewery.find_by_slug(params[:id])
     if @brewery.update_attributes(params[:brewery])    
       flash[:notice] = 'Beer was successfully updated!'  
-      return redirect_to admin_brewerys_path
+      return redirect_to admin_breweries_path
     end
     render :action => 'new'
   end

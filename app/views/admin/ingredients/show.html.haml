@@ -1,14 +1,3 @@
-%article.ingredient.show-page
+= link_to 'EDIT THIS INGREDIENT', edit_admin_ingredient_path(@ingredient)
 
-  - if @ingredient.ing_type == 'Hops'
-    = image_tag('hops-yellow.png', :class => 'float-left')
-  
-  %h3.float-left= @ingredient.name  
- 
-  = link_to 'EDIT THIS INGREDIENT', edit_admin_ingredient_path(@ingredient)
-  
-  %p.wide-body.float-left
-    = @ingredient.description
-    %br
-    %br
-    = link_to 'Source >>', @ingredient.resource_url
+= render :partial => 'layouts/ingredient_show_page'

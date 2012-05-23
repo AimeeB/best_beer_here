@@ -16,6 +16,7 @@ class Brewery
   field :brewers, :type => String
   field :image_url
   field :url, :type => String
+  field :twitter_handle, :type => String
   
   has_many :beers
   
