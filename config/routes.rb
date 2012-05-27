@@ -6,6 +6,7 @@ BestBeerHere::Application.routes.draw do
   get 'pages/beerpedia', :controller => 'pages'
   
   resources :beers, :controller => 'beers', :only => [:index, :show]
+  get "/breweries/json" => "breweries#json", :format => :json
   resources :bars, :controller => 'bars', :only => [:index, :show]
   resources :breweries, :controller => 'breweries', :only => [:index, :show]
   resources :styles, :controller => 'styles', :only => [:index, :show]

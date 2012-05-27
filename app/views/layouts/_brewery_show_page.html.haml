@@ -1,18 +1,41 @@
 %article.brewery.show-page
   %h1= @brewery.name
-  
-  - if @brewery.image_url
-    = image_tag(@brewery.image_url, :class => 'float-left' )
-        
-  %h2 Beers
-  %ul
-    - @beers.each do |beer|
-      %li
-        - if @admin
-          = link_to beer.name, admin_beer_path(beer)
-        - else
-          = link_to beer.name, beer_path(beer)
-                        
+
+  %section.brewery-info
+    - if @brewery.image_url
+      = image_tag(@brewery.image_url, :class => 'float-left' )
+    %article.brewery-detail
+      - if @brewery.brewers
+        %h3= "Brewers: #{@brewery.brewers}"
+      - if @brewery.yr_founded
+        %p= "Founded in #{@brewery.yr_founded}"
+      - if @brewery.description
+        %p= @brewery.description
+      - if @brewery.url
+        %p= link_to "Learn more about #{@brewery.name} >>", @brewery.url
+    
+  .clearfix
+  %br
+  %br
   - if @brewery.address1 && @brewery.city && @brewery.state
-    .map
+    %h2 The Brewery
+    .map.float-left
       = map_generator(@brewery)
+    %p.float-left
+      = @brewery.address1
+      %br
+      #{@brewery.city}, #{@brewery.state.upcase} #{@brewery.zip if @brewery.zip}
+  
+  .clearfix
+  %br
+  %br
+  %section.beer-list      
+    %h2 The Beers
+    %ul
+      - @beers.each do |beer|
+        %li
+          - if @admin
+            = link_to beer.name, admin_beer_path(beer)
+          - else
+            = link_to beer.name, beer_path(beer)
+                        

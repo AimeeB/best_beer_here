@@ -247,6 +247,11 @@ ol { list-style-type:none; }
 .sidebar {
   width: 25%;
 }
+article.show-page {
+  width: 70%;
+  float:left;
+  margin-right: 5%;
+}
 .content {
   
 }
@@ -298,7 +303,9 @@ header {
 
 /* ==|== SHOW PAGES ===================================================== */
 
-article.show-page {
+article.show-page, section.show-page {
+  width:70%;
+  float:left;
   img {
     max-height:200px;
     max-width:200px;
@@ -306,11 +313,12 @@ article.show-page {
   }
 }
 
-
-/* ==|== BEER SHOW PAGE ===================================================== */
-
 article.beer {
 
+}
+
+ul.breweries {
+  clear:left;
 }
 
 
