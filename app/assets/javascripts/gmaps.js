@@ -2,7 +2,7 @@ function initialize() {
     if (GBrowserIsCompatible()) {
       var map = new GMap2(document.getElementById("map_canvas"));
 	  var geocoder = new GClientGeocoder();
-      map.setCenter(new GLatLng(40.45, -98.78), 4.25);
+      map.setCenter(new GLatLng(40.45, -98.78), 4);
       map.setUIToDefault();
    
 	$.getJSON('/breweries/json', function(data) {
