@@ -1,36 +1,15 @@
 function initialize() {
-    if (GBrowserIsCompatible()) {
-      var map = new GMap2(document.getElementById("map_canvas"));
-	  var geocoder = new GClientGeocoder();
-      map.setCenter(new GLatLng(40.45, -98.78), 4.25);
-      map.setUIToDefault();
-   
-	$.getJSON('/breweries/json', function(data) {
-		
-		$.each(data, function(idx, val) {
-			var address = data[idx].address1
-			var name = data[idx].name
-			showAddress(address, name);
-		  });
+	var myOptions = {
+	      center: new google.maps.LatLng(-34.397, 150.644),
+	      zoom: 8,
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    };
+	 var map = new google.maps.Map(document.getElementById("map_canvas"),
+	   myOptions);	
+	var marker= new google.maps.Marker({
+		position: new google.maps.LatLng(9.099761549253056,76.5246167373657),
+		title: "Hello Testing",
+		clickable: true, 
+		map: map
 	});
-	
-	function showAddress(address, name) {
-	  geocoder.getLatLng(
-	    address,
-	    function(point) {
-	      if (!point) {
-	        alert(address + " not found");
-	      } else {
-	        var marker = new GMarker(point);
-	        map.addOverlay(marker);
-
-	        // As this is user-generated content, we display it as
-	        // text rather than HTML to reduce XSS vulnerabilities.
-	        marker.openInfoWindow(document.createTextNode(name));
-	      }
-	    }
-	  );
-	}
-	
-  }
 }
